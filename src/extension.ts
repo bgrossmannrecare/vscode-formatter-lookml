@@ -5,10 +5,10 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 
     // 👎 formatter implemented as separate command
-    vscode.commands.registerCommand('extension.format-foo', () => {
+    vscode.commands.registerCommand('extension.lookml', () => {
         const {activeTextEditor} = vscode.window;
 
-        if (activeTextEditor && activeTextEditor.document.languageId === 'foo-lang') {
+        if (activeTextEditor && activeTextEditor.document.languageId === 'lookml') {
             const {document} = activeTextEditor;
             const firstLine = document.lineAt(0);
             if (firstLine.text !== '42') {
@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     // 👍 formatter implemented using API
-    vscode.languages.registerDocumentFormattingEditProvider('foo-lang', {
+    vscode.languages.registerDocumentFormattingEditProvider('lookml', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             const firstLine = document.lineAt(0);
             if (firstLine.text !== '42') {

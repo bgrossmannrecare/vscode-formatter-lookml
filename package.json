@@ -1,35 +1,35 @@
 {
-    "name": "formatter-sample",
-    "displayName": "formatter-sample",
+    "name": "formatter-lookml",
+    "displayName": "formatter-lookml",
     "description": "",
     "version": "0.0.1",
-    "publisher": "jrieken",
+    "publisher": "bgrossmann",
     "engines": {
         "vscode": "^1.6.0"
     },
     "categories": [
-        "Other"
+        "Other", "Formatters"
     ],
     "activationEvents": [
-        "onLanguage:foo-lang"
+        "onLanguage:lookml"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "languages": [
             {
-                "id": "foo-lang",
+                "id": "lookml",
                 "aliases": [
-                    "Foo"
+                    "Looker Model", "LookML", "lookml"
                 ],
                 "extensions": [
-                    "foo"
+                    ".lookml",".model.lkml",".view.lkml"
                 ]
             }
         ],
         "commands": [
             {
-                "command": "extension.format-foo",
-                "title": "(Bad) Format Foo Files"
+                "command": "extension.lookml",
+                "title": "(Bad) Format lookml Files"
             }
         ]
     },
